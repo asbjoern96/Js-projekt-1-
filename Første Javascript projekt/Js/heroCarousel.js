@@ -17,7 +17,7 @@ function initHeroCarousel() {
   const prevBtn = root.querySelector("[data-carousel-prev]");
   const nextBtn = root.querySelector("[data-carousel-next]");
 
-  // Hvis noget mangler, stop (så vi undgår fejl)
+  // Hvis noget mangler, stop 
   if (!imgEl || !titleEl || !ctaEl || !dotsWrap) return;
 
   // 2) ARRAY: data til alle slides
@@ -69,11 +69,7 @@ function initHeroCarousel() {
     return n;
   }
 
-  // Lille fade-effekt
-  function fadeSwap(isFadingOut) {
-    imgEl.style.transition = "opacity 220ms ease";
-    imgEl.style.opacity = isFadingOut ? "0.15" : "1";
-  }
+ 
 
   // Byg dots (LOOP)
   function buildDots() {
@@ -119,7 +115,7 @@ function initHeroCarousel() {
     const s = slides[slideIndex - 1];
 
     // Opdater DOM med fade
-    fadeSwap(true);
+   
     window.setTimeout(() => {
       imgEl.src = s.img;
       imgEl.alt = s.alt;
@@ -131,7 +127,7 @@ function initHeroCarousel() {
       if (arrow) ctaEl.appendChild(arrow);
 
       setActiveDot();
-      fadeSwap(false);
+     
     }, 140);
   }
 
