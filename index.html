@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Min simple hjemmeside</title>
+   <meta name="robots" content="noindex">
+
+  <!-- Link til CSS -->
+  <link rel="stylesheet" href="style.css">
+
+
+<main class="page">
+
+
+  <header class="header">
+  <div class="header__inner">
+    <!-- Logo (venstre) -->
+    <a class="logo" href="#" aria-label="Forside">
+      <span class="logo__text">sporty<span>fied</span></span>
+    </a>
+
+    <!-- Nav (højre) -->
+    <nav class="topnav" aria-label="Hovedmenu" data-nav>
+      <a class="topnav__item topnav__item--pill" href="#" data-nav-item>
+        <span class="topnav__icon" aria-hidden="true">🎁</span>
+        <span class="topnav__label">Gaveidéer</span>
+      </a>
+
+      <a class="topnav__item" href="#" data-nav-item>
+        <span class="topnav__icon" aria-hidden="true">☆</span>
+        <span class="topnav__label">Nyt</span>
+      </a>
+
+      <a class="topnav__item" href="#" data-nav-item>
+        <span class="topnav__icon" aria-hidden="true">🏆</span>
+        <span class="topnav__label">Bestsellers</span>
+      </a>
+
+      <a class="topnav__item" href="#" data-nav-item>
+        <span class="topnav__label">Holdsæt</span>
+      </a>
+
+      <!-- Dropdown klar til JS -->
+      <button class="topnav__item topnav__item--dropdown" type="button"
+        aria-expanded="false" aria-controls="dd-toj" data-dropdown-btn="toj">
+        <span class="topnav__label">Tøj</span>
+        <span class="topnav__caret" aria-hidden="true">▾</span>
+      </button>
+
+      <a class="topnav__item" href="#" data-nav-item>
+        <span class="topnav__label">Tilbehør</span>
+      </a>
+
+      <button class="topnav__item topnav__item--dropdown" type="button"
+        aria-expanded="false" aria-controls="dd-klub" data-dropdown-btn="klub">
+        <span class="topnav__label">Klub shops</span>
+        <span class="topnav__caret" aria-hidden="true">▾</span>
+      </button>
+    </nav>
+  </div>
+
+  <!-- Dropdown panels (skjult nu, klar til JS) -->
+  <div class="dropdown" id="dd-toj" data-dropdown-panel hidden>
+    <a href="#">Trøjer</a>
+    <a href="#">Bukser</a>
+    <a href="#">Hoodies</a>
+  </div>
+
+  <div class="dropdown" id="dd-klub" data-dropdown-panel hidden>
+    <a href="#">Find din klub</a>
+    <a href="#">Ny klubshop</a>
+  </div>
+</header>
+  <!-- HERO / SLIDER -->
+  <section class="hero" aria-label="Hero slider" data-carousel>
+    <div class="hero__frame">
+      <!-- Billede (kan skiftes via JS senere) -->
+      <img
+        class="hero__img"
+        src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=1400&q=80"
+        alt="Sportstøj på bøjler"
+        data-carousel-image
+      />
+
+      <!-- Overlay content -->
+      <div class="hero__overlay">
+        <h1 class="hero__title" data-carousel-title>
+          DESIGN OG KØB DIT<br />EGET HOLDSÆT
+        </h1>
+
+        <a class="hero__cta" href="#" data-carousel-cta>
+          START HER <span class="hero__ctaArrow" aria-hidden="true">›</span>
+        </a>
+      </div>
+
+      <!-- Slider controls (klar til JS) -->
+      <button class="hero__ctrl hero__ctrl--left" type="button" aria-label="Forrige"
+        data-carousel-prev>
+        ‹
+      </button>
+
+      <button class="hero__ctrl hero__ctrl--right" type="button" aria-label="Næste"
+        data-carousel-next>
+        ›
+      </button>
+
+      <!-- Dots (kan genereres af JS senere, men her statisk) -->
+      <div class="hero__dots" role="tablist" aria-label="Slides" data-carousel-dots>
+        <button class="dot is-active" type="button" aria-label="Slide 1" data-carousel-dot="0"></button>
+        <button class="dot" type="button" aria-label="Slide 2" data-carousel-dot="1"></button>
+        <button class="dot" type="button" aria-label="Slide 3" data-carousel-dot="2"></button>
+        <button class="dot" type="button" aria-label="Slide 4" data-carousel-dot="3"></button>
+        <button class="dot" type="button" aria-label="Slide 5" data-carousel-dot="4"></button>
+      </div>
+    </div>
+  </section>
+  <section class="intro">
+  <h2 class="intro__title">SPORTSTØJ OG HOLDTØJ TIL ALLE</h2>
+
+  <p class="intro__text">
+    Køb sportstøj og holdtøj til private, sportsklubber og virksomheder. Vi forhandler sportstøj,
+    sportsudstyr og holdtøj til en lang række sportsgrene som f.eks. håndbold, fodbold, basketball,
+    løb, fitness, svømning, e-sport og meget mere.
+  </p>
+
+  <p class="intro__text">
+    Vi har et stort udvalg til både herrer, damer og børn fra mange kendte mærker. Vi har hurtig
+    levering og gratis levering ved køb over 499 kr.
+  </p>
+</section>
+
+<section class="reco" aria-label="Vi anbefaler" data-reco>
+  <div class="reco__head">
+    <h3 class="reco__title">VI ANBEFALER</h3>
+
+    <!-- Knapper klar til JS -->
+    <div class="reco__controls">
+      <button class="reco__btn" type="button" aria-label="Forrige" data-reco-prev>‹</button>
+      <button class="reco__btn" type="button" aria-label="Næste" data-reco-next>›</button>
+    </div>
+  </div>
+
+  <!-- "Track" klar til JS (scroll-snap virker uden JS) -->
+  <div class="reco__viewport" data-reco-viewport>
+    <div class="reco__track" data-reco-track>
+  <!-- Kort 1 -->
+  <article class="product" data-product data-card-id="1">
+    <div class="product__media">
+      <img class="product__img" src="images/product1m.jpg" alt="Produkt 1" />
+      <span class="product__sticker">EKSTREMT<br>GODT GRIP!</span>
+      <span class="product__brand">erima</span>
+    </div>
+    <div class="product__body">
+      <p class="product__meta">Erima</p>
+      <h4 class="product__name">MAGIC WHITE HÅNDBOLD</h4>
+      <p class="product__old">Vejl. 375,00 kr.</p>
+      <div class="product__priceRow">
+        <strong class="product__price">249,- kr.</strong>
+        <span class="product__discount">-34%</span>
+      </div>
+    </div>
+  </article>
+
+  <!-- Kort 2 -->
+  <article class="product" data-product data-card-id="2">
+    <div class="product__media">
+      <img class="product__img" src="images/product2m.jpg" alt="Produkt 2" />
+      <span class="product__brand">select</span>
+    </div>
+    <div class="product__body">
+      <p class="product__meta">Select</p>
+      <h4 class="product__name">ULTIMATE EHF EM 2026 HÅNDBOLD</h4>
+      <p class="product__old">Vejl. 700,00 kr.</p>
+      <div class="product__priceRow">
+        <strong class="product__price">420,- kr.</strong>
+        <span class="product__discount">-40%</span>
+      </div>
+    </div>
+  </article>
+
+  <!-- Kort 3 -->
+  <article class="product" data-product data-card-id="3">
+    <div class="product__media">
+      <img class="product__img" src="images/product3m.webp" alt="Produkt 3" />
+      <span class="product__brand">craft</span>
+    </div>
+    <div class="product__body">
+      <p class="product__meta">Craft</p>
+      <h4 class="product__name">TRAINING TEE</h4>
+      <p class="product__old">Vejl. 299,00 kr.</p>
+      <div class="product__priceRow">
+        <strong class="product__price">199,- kr.</strong>
+        <span class="product__discount">-33%</span>
+      </div>
+    </div>
+  </article>
+
+  <!-- Kort 4 -->
+  <article class="product" data-product data-card-id="4">
+    <div class="product__media">
+      <img class="product__img" src="images/product4m.webp" alt="Produkt 4" />
+      <span class="product__brand">sportyfied</span>
+    </div>
+    <div class="product__body">
+      <p class="product__meta">Sportyfied</p>
+      <h4 class="product__name">SPORTSSTRØMPER PRO</h4>
+      <p class="product__old">Vejl. 129,00 kr.</p>
+      <div class="product__priceRow">
+        <strong class="product__price">89,- kr.</strong>
+        <span class="product__discount">-31%</span>
+      </div>
+    </div>
+  </article>
+
+  <!-- Kort 5 -->
+  <article class="product" data-product data-card-id="5">
+    <div class="product__media">
+      <img class="product__img" src="images/product5m.png" alt="Produkt 5" />
+      <span class="product__brand">adidas</span>
+    </div>
+    <div class="product__body">
+      <p class="product__meta">Adidas</p>
+      <h4 class="product__name">CON22 TR SHO</h4>
+      <p class="product__old">Vejl. 279,00 kr.</p>
+      <div class="product__priceRow">
+        <strong class="product__price">199,- kr.</strong>
+        <span class="product__discount">-29%</span>
+      </div>
+    </div>
+  </article>
+
+  <!-- Kort 6 -->
+  <article class="product" data-product data-card-id="6">
+    <div class="product__media">
+      <img class="product__img" src="images/product6m.webp" alt="Produkt 6" />
+      <span class="product__brand">nike</span>
+    </div>
+    <div class="product__body">
+      <p class="product__meta">Nike</p>
+      <h4 class="product__name">TRAINING TOP</h4>
+      <p class="product__old">Vejl. 399,00 kr.</p>
+      <div class="product__priceRow">
+        <strong class="product__price">299,- kr.</strong>
+        <span class="product__discount">-25%</span>
+      </div>
+    </div>
+  </article>
+
+  <!-- Kort 7 -->
+  <article class="product" data-product data-card-id="7">
+    <div class="product__media">
+      <img class="product__img" src="images/product7m.jpg" alt="Produkt 7" />
+      <span class="product__brand">puma</span>
+    </div>
+    <div class="product__body">
+      <p class="product__meta">Puma</p>
+      <h4 class="product__name">TEAM BAG</h4>
+      <p class="product__old">Vejl. 349,00 kr.</p>
+      <div class="product__priceRow">
+        <strong class="product__price">249,- kr.</strong>
+        <span class="product__discount">-29%</span>
+      </div>
+    </div>
+  </article>
+
+  <!-- Kort 8 -->
+  <article class="product" data-product data-card-id="8">
+    <div class="product__media">
+      <img class="product__img" src="images/product8m.webp" alt="Produkt 8" />
+      <span class="product__brand">hummel</span>
+    </div>
+    <div class="product__body">
+      <p class="product__meta">Hummel</p>
+      <h4 class="product__name">SPORTS DRINK BOTTLE</h4>
+      <p class="product__old">Vejl. 59,00 kr.</p>
+      <div class="product__priceRow">
+        <strong class="product__price">39,- kr.</strong>
+        <span class="product__discount">-34%</span>
+      </div>
+    </div>
+  </article>
+</div>
+
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+¨¨</section>
+  <section class="popular" aria-label="Populære produkter" data-popular>
+    <div class="popular__head">
+      <h3 class="popular__title">POPULÆRE PRODUKTER</h3>
+
+      <div class="popular__controls">
+        <button class="circleBtn" type="button" aria-label="Forrige" data-popular-prev>‹</button>
+        <button class="circleBtn" type="button" aria-label="Næste" data-popular-next>›</button>
+      </div>
+    </div>
+
+    <div class="popular__viewport" data-popular-viewport>
+      <div class="popular__track" data-popular-track>
+
+        <article class="pCard" data-pcard>
+          <div class="pCard__media">
+            <img class="pCard__img" src="images/product-1-600x600.jpg" alt="Produkt 1" width="600" height="600">
+          </div>
+          <p class="pCard__brand">Brand</p>
+          <h4 class="pCard__name">Produkt 1</h4>
+          <div class="pCard__price">299,- kr.</div>
+        </article>
+
+        <article class="pCard" data-pcard>
+          <div class="pCard__media">
+            <img class="pCard__img" src="images/product-2-600x600.jpg" alt="Produkt 2" width="600" height="600">
+          </div>
+          <p class="pCard__brand">Brand</p>
+          <h4 class="pCard__name">Produkt 2</h4>
+          <div class="pCard__price">249,- kr.</div>
+        </article>
+
+        <article class="pCard" data-pcard>
+          <div class="pCard__media">
+            <img class="pCard__img" src="images/product-3-600x600.jpg" alt="Produkt 3" width="600" height="600">
+          </div>
+          <p class="pCard__brand">Brand</p>
+          <h4 class="pCard__name">Produkt 3</h4>
+          <div class="pCard__price">599,- kr.</div>
+        </article>
+
+        <article class="pCard" data-pcard>
+          <div class="pCard__media">
+            <img class="pCard__img" src="images/product-4-600x600.jpg" alt="Produkt 4" width="600" height="600">
+          </div>
+          <p class="pCard__brand">Brand</p>
+          <h4 class="pCard__name">Produkt 4</h4>
+          <div class="pCard__price">349,- kr.</div>
+        </article>
+
+        <article class="pCard" data-pcard>
+          <div class="pCard__media">
+            <img class="pCard__img" src="images/product-5-600x600.jpg" alt="Produkt 5" width="600" height="600">
+          </div>
+          <p class="pCard__brand">Brand</p>
+          <h4 class="pCard__name">Produkt 5</h4>
+          <div class="pCard__price">499,- kr.</div>
+        </article>
+
+        <article class="pCard" data-pcard>
+          <div class="pCard__media">
+            <img class="pCard__img" src="images/product-6-600x600.jpg" alt="Produkt 6" width="600" height="600">
+          </div>
+          <p class="pCard__brand">Brand</p>
+          <h4 class="pCard__name">Produkt 6</h4>
+          <div class="pCard__price">799,- kr.</div>
+        </article>
+
+        <article class="pCard" data-pcard>
+          <div class="pCard__media">
+            <img class="pCard__img" src="images/product-7-600x600.jpg" alt="Produkt 7" width="600" height="600">
+          </div>
+          <p class="pCard__brand">Brand</p>
+          <h4 class="pCard__name">Produkt 7</h4>
+          <div class="pCard__price">899,- kr.</div>
+        </article>
+
+        <article class="pCard" data-pcard>
+          <div class="pCard__media">
+            <img class="pCard__img" src="images/product-8-600x600.jpg" alt="Produkt 8" width="600" height="600">
+          </div>
+          <p class="pCard__brand">Brand</p>
+          <h4 class="pCard__name">Produkt 8</h4>
+          <div class="pCard__price">699,- kr.</div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+<section class="forYou" aria-label="Måske noget for dig" data-foryou>
+  <div class="forYou__head">
+    <h3 class="forYou__title">MÅSKE NOGET FOR DIG</h3>
+
+    <div class="forYou__controls">
+      <button class="circleBtn" type="button" aria-label="Forrige" data-foryou-prev>‹</button>
+      <button class="circleBtn" type="button" aria-label="Næste" data-foryou-next>›</button>
+    </div>
+  </div>
+
+  <div class="forYou__viewport" data-foryou-viewport>
+    <div class="forYou__track" data-foryou-track>
+      <!-- Produkt 1 -->
+      <article class="pCard" data-pcard>
+        <div class="pCard__media">
+          <div class="pCard__brandMark">tecnifibre</div>
+
+          <img class="pCard__img"
+               src="https://images.unsplash.com/photo-1528701800489-20be9c0bcb07?auto=format&fit=crop&w=900&q=80"
+               alt="Bukser" />
+        </div>
+
+        <div class="pCard__body">
+          <p class="pCard__brand">Tecnifibre</p>
+          <h4 class="pCard__name">LADY TECH PANTS MARINE JUNIOR</h4>
+
+          <p class="pCard__old">Vejl. 475,00 kr.</p>
+
+          <div class="pCard__priceRow">
+            <strong class="pCard__price">225,- kr.</strong>
+            <span class="pCard__discount">-53%</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Produkt 2 -->
+      <article class="pCard" data-pcard>
+        <div class="pCard__media">
+          <div class="pCard__brandMark">CRAFT</div>
+
+          <img class="pCard__img"
+               src="https://images.unsplash.com/photo-1514996937319-344454492b37?auto=format&fit=crop&w=900&q=80"
+               alt="Træningsdragt" />
+        </div>
+
+        <div class="pCard__body">
+          <p class="pCard__brand">Craft</p>
+          <h4 class="pCard__name">EVOLVE 2.0 TRÆNINGSDRAGT MED LYNLÅS</h4>
+
+          <p class="pCard__old">Vejl. 900,00 kr.</p>
+
+          <div class="pCard__priceRow">
+            <strong class="pCard__price">735,- kr.</strong>
+            <span class="pCard__discount">-18%</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Produkt 3 (grå panel + badge + farver) -->
+      <article class="pCard pCard--panel" data-pcard>
+        <div class="pCard__media">
+          <div class="pCard__brandMark">adidas</div>
+
+          <img class="pCard__img"
+               src="https://images.unsplash.com/photo-1526401485004-2aa7d7c4b76a?auto=format&fit=crop&w=900&q=80"
+               alt="Shorts" />
+
+          <div class="pCard__swatches pCard__swatches--side" aria-label="Farver" data-swatches>
+            <button class="swatch is-active" aria-label="Farve 1" type="button"></button>
+            <button class="swatch" aria-label="Farve 2" type="button"></button>
+          </div>
+
+          <span class="pCard__flag">UDSOLGT<br>FARVE</span>
+        </div>
+
+        <div class="pCard__body">
+          <p class="pCard__brand">Adidas</p>
+          <h4 class="pCard__name">CON22 TR SHO TENABL/WHITE</h4>
+
+          <p class="pCard__old">Vejl. 279,00 kr.</p>
+
+          <div class="pCard__priceRow">
+            <strong class="pCard__price">199,- kr.</strong>
+            <span class="pCard__discount">-29%</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <div class="forYou__progress" role="tablist" aria-label="Progress" data-foryou-progress>
+    <button class="bar is-active" type="button" aria-label="Side 1" data-foryou-bar="0"></button>
+    <button class="bar" type="button" aria-label="Side 2" data-foryou-bar="1"></button>
+    <button class="bar" type="button" aria-label="Side 3" data-foryou-bar="2"></button>
+    <button class="bar" type="button" aria-label="Side 4" data-foryou-bar="3"></button>
+    <button class="bar" type="button" aria-label="Side 5" data-foryou-bar="4"></button>
+    <button class="bar" type="button" aria-label="Side 6" data-foryou-bar="5"></button>
+  </div>
+</section>
+
+
+</main>
+<script src="js/navbar.js" defer></script>
+<script src="js/heroCarousel.js" defer></script>
+<script src="js/recoCarousel.js" defer></script>
+<script src="js/slider.js"  defer></script>
+<script src="js/forYouCarousel.js" defer></script>
+
+
+
+  <footer>
+    <p>© 2026 Min hjemmeside</p>
+  </footer>
+
+  
+</body>
+</html>
