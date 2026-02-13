@@ -102,7 +102,7 @@ function initHeroCarousel() {
     showSlides(n);
   }
 
-  // 5) showSlides: wrap-around + opdater DOM
+  // 5) showSlides: wrap-around 
   function showSlides(n) {
     // didaktisk constrain
     const safeN = clamp(n, -9999, 9999);
@@ -114,21 +114,18 @@ function initHeroCarousel() {
 
     const s = slides[slideIndex - 1];
 
-    // Opdater DOM med fade
-   
-    window.setTimeout(() => {
-      imgEl.src = s.img;
-      imgEl.alt = s.alt;
-      titleEl.innerHTML = s.title.replaceAll("\n", "<br />");
+imgEl.src = s.img;
+imgEl.alt = s.alt;
+titleEl.innerHTML = s.title.replaceAll("\n", "<br />");
 
-      const arrow = ctaEl.querySelector(".hero__ctaArrow");
-      ctaEl.href = s.ctaHref;
-      ctaEl.textContent = s.ctaText + " ";
-      if (arrow) ctaEl.appendChild(arrow);
+const arrow = ctaEl.querySelector(".hero__ctaArrow");
+ctaEl.href = s.ctaHref;
+ctaEl.textContent = s.ctaText + " ";
+if (arrow) ctaEl.appendChild(arrow);
 
-      setActiveDot();
-     
-    }, 140);
+setActiveDot();
+
+
   }
 
   // 6) Events
